@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+nav{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 100;
+    height: 65px;
+    margin-top: 0;
+    overflow-x: hidden;
+    transition: ease-in-out 1s;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 35px;
+    transition: 0.3s;
+}
+
+.logo h2{
+    font-family: "Cinzel", serif;
+    text-align: center;
+    transition: 0.3s; 
+}
+
+.output{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background-color: rgb(12, 226, 208);
+    width: 570px;
+    padding: 7px;
+    border-radius: 18px;
+}
+
+#output{
+    border: none;
+    outline: none;
+    width: 500px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(65, 196, 185);
+    transition: 0.3s;
+}
+
+.output img{
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.opdisplay{
+    position: fixed;
+    right:0;
+    top: 65px;
+    margin-left: 412px;
+    width: 74%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #00b3db, #0083B0);
+    transition: ease-in-out 1s;
+}
+
+.type{
+    position: fixed;
+    top: 65px;
+    z-index: 100;
+    background-color: white;
+    width: 26%;
+    height: 100%;
+    box-shadow: -7px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    transition: ease-in-out 0.5s;
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        height: auto;
+    }
+
+    .navbar,.logo,.output,#output {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        width: 100%;
+    }
+    .output img{
+        cursor: pointer;
+        border-radius: 4px;
+        text-align: center;
+    }
+    .type {
+        width: 50%;
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        margin-top: 17px;
+    }
+
+    .input input,.input select {
+        font-size: 15px;
+    }
+
+    .label {
+        font-size: 13px;
+    }
+
+    .button {
+        flex-direction: row;
+    }
+
+    #add,#del {
+        width: auto;
+        padding: 5px 10px;
+    }
+
+    .contain {
+        margin-top: 20px;
+    }
+    
+    .opdisplay {
+        position: fixed;
+        right:0;
+        margin-left: 0;
+        width: 50%;
+    }
+}
+
+
+.active{
+    right: 0;
+    transition: ease-in-out 0.5s;
+}
+
+.contain{
+    width: 100%;
+    background-color: rgb(244, 242, 242);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#generator{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+}
+
+.color{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.input{
+    position: relative;
+    margin: 20px 0;
+    transition: 0.5s;
+}
+
+.input input, .input select{
+    width: 100%;
+    padding: 7px;
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 18px;
+}
+
+.label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+input:focus, select:focus{
+    border: 2px solid rgb(4, 126, 233);
+}
+
+.form-input:focus ~ .label, 
+.select1:focus ~ .label, 
+.form-input:not(:placeholder-shown) ~ .label, 
+.select1:not([value=""]) ~ .label{
+    top: 0;
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: white;
+    transition: 0.5s;
+}
+
+.linear, .radial, .conic{
+    display: none;
+}
+
+#apply{
+    text-align: center;
+    width: 100%;
+    padding: 7px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(4, 126, 233);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#add, #del{
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#add{
+    background-color: #0da85f;
+}
+
+#del{
+    background-color: #fd2e2e;
+}
+
+input[type="color"] {
+	border: none;
+	width: 60px;
+	height: 60px;
+}
+
+.picker{
+    margin: 10px;
+    padding: 10px;
+}
